@@ -1,0 +1,187 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.1 (30/4/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[]{deedy-resume-openfont}
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\namesection{Yijie}{Qiu}{%
+    \urlstyle{same}
+    \href{mailto:helen.yijieqiu@gmail.com}{helen.yijieqiu@gmail.com}
+  | \href{https://www.linkedin.com/in/yijieqiu}{https://www.linkedin.com/in/yijieqiu}
+  | 415.823.1986%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.35\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\smallgap
+\gap
+\gap
+\section{Education} 
+\subsection{Carnegie Mellon University}
+\descript{MS Information Systems Mgmt}
+\location{December 2015 | Pittsburgh, PA}
+\sectionsep
+
+
+\descript{BS Chemical Engineering}
+\location{May 2014 | Pittsburgh, PA}
+Additional major in Economics and Statistics \\
+University Honors
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Coursework}
+\subsection{Graduate}
+10605 Machine Learning Large Data Sets \\
+11642 Search Engine \\
+15619 Cloud Computing \\
+95702 Distributed Systems \\
+95877 Python for Data Analysis \\
+95736 Advanced Relational Database \\
+\sectionsep
+
+\subsection{Undergraduate}
+15121 Data Structures in Java \\
+36402 Advanced Data Analysis \\
+36315 Statistical Graphics and Visualization \\
+06462 Optimization Modeling \& Algorithms \\
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Skills}
+\subsection{Technical}
+\descript{Programming Languages}
+Java \\
+Python \\
+Shell \\
+R \\
+MATLAB \\
+
+\descript{Tools}
+Oracle Database \& PL/SQL \\
+Redshift \\
+Hive \\
+MapReduce
+\sectionsep
+
+\subsection{Language}
+Native: Mandarin Chinese \\
+Fluent: English \textbullet{} Cantonese
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.64\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\smallgap
+\gap
+\gap
+\section{Experience}
+
+\runsubsection{Amazon}
+\descript{| Software Development Engineer, Device Services }
+\location{February 2016 - Present | Seattle, WA}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Developed ingestion work flow for service logs, using AWS EMR, Redshift, and Hive
+\item Developed load testing utilities for backend services, and instrumented load tests in preparation of holiday peaks
+\item Maintained server-side and client-side metrics and logging components used by Amazon apps across various platforms (FireOS, Android, iOS)
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Amazon}
+\descript{| Software Development Intern, Kindle Xray}
+\location{May 2015 – Aug 2015 | Seattle, WA}
+\begin{tightemize}
+\item Analyzed logs using MapReduce jobs to identify areas of improvement in text analytics pipelines
+\item Improved quality of pipeline outputs by implementing and querying from a Spring and Hibernate-backed AWS RDS database storing historic log data
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PROJECT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Project}
+\runsubsection{Online Voting System}
+\descript{}
+\location{Aug 2015 – Dec 2015}
+\begin{tightemize}
+\item Designed a scalable, encrypted, and verifiable online voting system, where each voter can verify that his/her vote is received and tallied correctly, without explicitly revealing the choice
+\item Built a prototype of the system using Java Swing for desktop clients, AWS EC2 with MySQL for servers, ElGamal encryption for data protection during transmission, and SCrypt for ballot verification
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Text Search Engine}
+\descript{}
+\location{January 2015 – April 2015}
+\begin{tightemize}
+\item Built a Lucene-based search engine that supports common search operations like AND, OR, NEAR, and WINDOW
+\item Enabled search result ranking through Boolean, BM25, and Indri algorithms
+\item Optimized search results using query expansion and Learning to Rank
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Twitter Analytics RESTful Web Service}
+\descript{}
+\location{Oct 2014 - Dec 2014}
+\begin{tightemize}
+\item Designed and implemented a RESTful web service to handle different types of queries regarding Twitter users and their tweets
+\item Utilized MapReduce to censor, filter, and process 1TB of raw data, and ingested results into MySQL and HBase databases for later accesses
+\item Optimized service performance under large traffic through use of load balancer, connection pool, caching, and database tuning
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     AWARDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\end{document}
