@@ -23,12 +23,19 @@
 \definecolor{primary}{HTML}{2b2b2b} 
 \definecolor{headings}{HTML}{6A6A6A}
 \definecolor{subheadings}{HTML}{333333}
+\definecolor{summary}{HTML}{2b2b2b}
 
 % Set main fonts
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Color=primary, Path = fonts/lato/]{Lato-Lig}
+\setmainfont[
+  Color = primary,
+  Path = fonts/lato/,
+  Extension = .ttf,
+  ItalicFont = *Ita,
+]{Lato-Lig}
 \setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = fonts/raleway/]{Raleway-ExtraLight}
 \newcommand{\custombold}[1]{\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Reg}\selectfont #1 \normalfont}
+
 
 % Date command
 \setlength{\TPHorizModule}{1mm}
@@ -66,11 +73,15 @@ Last Updated on
 \newcommand{\runsubsection}[1]{\color{subheadings}
 \fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
 
+
 % Descriptors command
 \newcommand{\descript}[1]{\color{subheadings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
 
 % Location command
 \newcommand{\location}[1]{\color{headings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
+
+% Summary command
+\newcommand{\summary}[1]{\textit{\color{summary}\fontsize{10pt}{12pt} #1}}
 
 % Section seperators command
 \newcommand{\sectionsep}[0]{\vspace{8pt}}
@@ -81,3 +92,4 @@ Last Updated on
 % Gap filler command
 \newcommand{\gap}[0]{\vspace{14pt}}
 \newcommand{\smallgap}[0]{\vspace{10pt}}
+\newcommand{\minigap}[0]{\vspace{5pt}}

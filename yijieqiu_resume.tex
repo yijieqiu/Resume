@@ -20,7 +20,6 @@
 \documentclass[]{deedy-resume-openfont}
 
 \begin{document}
-\vspace*{15pt} % Hack to increase top margin and re-balance page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %     TITLE NAME
@@ -44,9 +43,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     EDUCATION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\smallgap
 \gap
-\gap
+\vspace{1pt} % Hack to let top of the two columns align horizontally
 \section{Education} 
 \subsection{Carnegie Mellon University}
 \descript{MS Information Systems Mgmt}
@@ -85,19 +83,21 @@ University Honors
 %     SKILLS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Skills}
+\section{Skill}
 \subsection{Technical}
+\minigap
 \descript{Programming Languages}
 Java \\
 Python \\
 Ruby \\
 Shell \\
 R \\
-MATLAB \\
+MATLAB
+\minigap
 
 \descript{Tools}
+AWS Services \\
 Oracle Database \& PL/SQL \\
-Redshift \\
 Hive \\
 MapReduce
 \sectionsep
@@ -120,39 +120,48 @@ Fluent: English \textbullet{} Cantonese
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     EXPERIENCE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\smallgap
-\gap
 \gap
 \section{Experience}
 
 \runsubsection{Amazon}
-\descript{| Software Engineer, Amazon SageMaker }
+\descript{| Software Engineer, Amazon SageMaker Hosting }
 \location{March 2017 - Present | Seattle, WA}
+\minigap
+\summary{Amazon SageMaker is a fully-managed machine learning platform that enables developers and data scientists to build, train, and deploy ML models at scale. The hosting service provides managed HTTPS endpoints, which let users go from ML model Docker containers to production-ready, scalable online inferences in just a few clicks.}
+\minigap
 \vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
-\item Contributed to the release of Amazon SageMaker at AWS re:Invent 2017
-\item Designed and implemented internal APIs and systems necessary for fleet security patching and infrastructure upgrades
-\item Designed and implemented service canaries for all SageMaker Hosting APIs, to continuously monitor service health and alert on anomalies
-\item Improved service scalability by introducing event-based notifications to asynchronous workflows
+\item Contributed to initial launch of Amazon SageMaker at AWS re:Invent 2017.
+\item Designed and implemented APIs and workflows for bouncing the underlying infrastructure of SageMaker endpoints without interruption to inferences.
+\item Architected and implemented system for automated detection of SageMaker endpoints running outdated software, and applying necessary patches with zero downtime. The system has orchestrated software and security updates for more than 15K endpoints to-date.
+\item Implemented service priming mechanism for SageMaker online inference routing fleet, to minimize cold start impact on server-side latency. For requests with 1KB payload, the P99 overhead latency immediately following service deployment dropped from >1.6 second to ~80 ms with priming.
+\item Built service canaries for all SageMaker Hosting APIs with extensible design, allowing for continuous monitoring of service health and requiring minimal code changes to add coverage for new features.
+\item Improved service scalability and lowered endpoint operation latency by incorporating event-driven architectures into asynchronous workflows.
 \end{tightemize}
 \sectionsep
 
 \runsubsection{Amazon}
-\descript{| Software Engineer, Device Services }
+\descript{| Software Engineer, Mobile Diagnostics}
 \location{February 2016 - March 2017 | Seattle, WA}
+\minigap
+\summary{Part of Amazon device middleware services, the Mobile Diagnostics team enables Amazon devices to record key app performance, usage, and crash information, and securely transmit them to backend services for troubleshooting and analytics purposes.}
+\minigap
 \begin{tightemize}
-\item Developed end-to-end encrypted, terabyte scale metrics ingestion pipeline, using AWS EMR, Redshift, and Hive
-\item Established load testing utilities for back-end services, and instrumented load tests in preparation of holiday peaks
-\item Maintained server-side and client-side metrics and logging components used by Amazon apps across various platforms (Fire OS, Android, iOS)
+\item Developed an end-to-end encrypted, terabyte scale data ingestion pipeline. The system transforms app and devices usage metrics collected on individual hardware (>280 million entries daily as of mid-2017) into structured, aggregated BI tables capable of providing consumer insights and assisting business decision making.
+\item Established load testing utilities for back-end services, and instrumented load tests and server, load balancer tuning in preparation of holiday peaks.
+\item Maintained server-side and client-side metrics and logging components used by Amazon apps across various platforms (Fire OS, Android, iOS).
 \end{tightemize}
 \sectionsep
 
 \runsubsection{Amazon}
 \descript{| Software Development Intern, Kindle Xray }
 \location{May 2015 – Aug 2015 | Seattle, WA}
+\minigap
+\summary{Kindle X-ray is a content enhancement feature that notes the appearances of key characters, places, and phrases throughout the book, and provides detailed descriptions, all with a single tap.}
+\minigap
 \begin{tightemize}
-\item Analyzed logs using MapReduce jobs to identify areas of improvement in text analytics pipelines
-\item Improved quality of pipeline outputs by implementing and querying from a Spring and Hibernate-backed AWS RDS database storing historic log data
+\item Performed analysis using MapReduce to identify areas of improvement in text labeling pipelines.
+\item Improved quality of pipeline outputs by implementing and integrating with an AWS RDS database containing historic labelling and correction data.
 \end{tightemize}
 \sectionsep
 
@@ -160,29 +169,25 @@ Fluent: English \textbullet{} Cantonese
 %     PROJECT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Project}
-\runsubsection{Online Voting System}
-\descript{}
-\location{Aug 2015 – Dec 2015}
-\begin{tightemize}
-\item Designed a scalable, encrypted, and verifiable online voting system, where each voter can verify that his/her vote is received and tallied correctly, without explicitly revealing the choice
-\item Built a prototype of the system using Java Swing for desktop clients, AWS EC2 with MySQL for servers, ElGamal encryption for data protection during transmission, and SCrypt for ballot verification
-\end{tightemize}
-\sectionsep
+% \section{Project}
+% \runsubsection{Online Voting System}
+% \descript{}
+% \location{Aug 2015 – Dec 2015}
+% \begin{tightemize}
+% \item Designed a scalable, encrypted, and verifiable online voting system, where each voter can verify that his/her vote is received and tallied correctly, without explicitly revealing the choice
+% \item Built a prototype of the system using Java Swing for desktop clients, AWS EC2 with MySQL for servers, ElGamal encryption for data protection during transmission, and SCrypt for ballot verification
+% \end{tightemize}
+% \sectionsep
 
-\runsubsection{Text Search Engine}
-\descript{}
-\location{January 2015 – April 2015}
-\begin{tightemize}
-\item Programmed a Lucene-based search engine that supports common search operations like AND, OR, NEAR, and WINDOW
-\item Enabled search result ranking through Boolean, BM25, and Indri algorithms
-\item Optimized search results using query expansion and Learning to Rank
-\end{tightemize}
-\sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     AWARDS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \runsubsection{Text Search Engine}
+% \descript{}
+% \location{January 2015 – April 2015}
+% \begin{tightemize}
+% \item Programmed a Lucene-based search engine that supports common search operations like AND, OR, NEAR, and WINDOW
+% \item Enabled search result ranking through Boolean, BM25, and Indri algorithms
+% \item Optimized search results using query expansion and Learning to Rank
+% \end{tightemize}
+% \sectionsep
 
 \end{minipage} 
 \end{document}
