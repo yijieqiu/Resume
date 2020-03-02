@@ -88,6 +88,7 @@ University Honors
 \minigap
 \descript{Programming Languages}
 Java \\
+Scala \\
 Python \\
 Ruby \\
 Shell \\
@@ -95,8 +96,9 @@ R \\
 MATLAB
 \minigap
 
-\descript{Tools}
+\descript{Tools \& Frameworks}
 AWS Services \\
+Docker \\
 Oracle Database \& PL/SQL \\
 Hive \\
 MapReduce
@@ -123,20 +125,32 @@ Fluent: English \textbullet{} Cantonese
 \gap
 \section{Experience}
 
+\runsubsection{Stripe}
+\descript{| Software Engineer, Signals Crawling}
+\location{November 2019 - Present | Seattle, WA}
+\minigap
+\summary{Part of Stripe's Merchant Intelligence org, Signals Crawling is responsible for collecting information about online businesses, enabling customer insights and risk evaluation.}
+\minigap
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Improved resiliency and scalability of Stripe's website fetcher through service re-architecture. Website retrieval error rate decreased from \textasciitilde20\% to sub-5\%. Number of requests dropped during service deployment and normal operation decreased from >1M to single-digit.
+\end{tightemize}
+\sectionsep
+
 \runsubsection{Amazon}
 \descript{| Software Engineer, Amazon SageMaker Hosting }
-\location{March 2017 - Present | Seattle, WA}
+\location{March 2017 - October 2019 | Seattle, WA}
 \minigap
-\summary{Amazon SageMaker is a fully-managed machine learning platform that enables developers and data scientists to build, train, and deploy ML models at scale. The hosting service provides managed HTTPS endpoints, which let users go from ML model Docker containers to production-ready, scalable online inferences in just a few clicks.}
-\minigap
+\summary{Amazon SageMaker is a fully-managed machine learning platform that enables developers and data scientists to build, train, and deploy ML models at scale. The hosting service provides managed HTTPS endpoints, letting users go from ML model Docker containers to production-ready, scalable online inferences in just a few clicks.}
 \vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
 \item Contributed to initial launch of Amazon SageMaker at AWS re:Invent 2017.
 \item Designed and implemented APIs and workflows for bouncing the underlying infrastructure of SageMaker endpoints without interruption to inferences.
 \item Architected and implemented system for automated detection of SageMaker endpoints running outdated software, and applying necessary patches with zero downtime. The system has orchestrated software and security updates for more than 15K endpoints to-date.
+\item Developed distributed, cache-optimized routing, as well as internal container state reconciliation mechanisms for SageMaker multi-model endpoints.
 \item Implemented service priming mechanism for SageMaker online inference routing fleet, to minimize cold start impact on server-side latency. For requests with 1KB payload, the P99 overhead latency immediately following service deployment dropped from >1.6 second to ~80 ms with priming.
 \item Built service canaries for all SageMaker Hosting APIs with extensible design, allowing for continuous monitoring of service health and requiring minimal code changes to add coverage for new features.
-\item Improved service scalability and lowered endpoint operation latency by incorporating event-driven architectures into asynchronous workflows.
+% \item Improved service scalability and lowered endpoint operation latency by incorporating event-driven architectures into asynchronous workflows.
 \end{tightemize}
 \sectionsep
 
@@ -144,26 +158,26 @@ Fluent: English \textbullet{} Cantonese
 \descript{| Software Engineer, Mobile Diagnostics}
 \location{February 2016 - March 2017 | Seattle, WA}
 \minigap
-\summary{Part of Amazon device middleware services, the Mobile Diagnostics team enables Amazon devices to record key app performance, usage, and crash information, and securely transmit them to backend services for troubleshooting and analytics purposes.}
+\summary{Part of Amazon device middleware services, Mobile Diagnostics enables Amazon devices to record key app performance, usage, and crash information, and securely transmit them to back-end services for troubleshooting and analytics purposes.}
 \minigap
 \begin{tightemize}
-\item Developed an end-to-end encrypted, terabyte scale data ingestion pipeline. The system transforms app and devices usage metrics collected on individual hardware (>280 million entries daily as of mid-2017) into structured, aggregated BI tables capable of providing consumer insights and assisting business decision making.
-\item Established load testing utilities for back-end services, and instrumented load tests and server, load balancer tuning in preparation of holiday peaks.
+\item Developed an end-to-end encrypted, terabyte scale data ingestion pipeline. The system transforms app and device usage metrics collected on individual hardware (>280 million entries daily as of mid-2017) into structured, aggregated BI tables capable of providing consumer insights and assisting business decision making.
+\item Established load testing frameworks for back-end services. Instrumented load tests and server, load balancer tuning in preparation of holiday peaks.
 \item Maintained server-side and client-side metrics and logging components used by Amazon apps across various platforms (Fire OS, Android, iOS).
 \end{tightemize}
 \sectionsep
 
-\runsubsection{Amazon}
-\descript{| Software Development Intern, Kindle Xray }
-\location{May 2015 – Aug 2015 | Seattle, WA}
-\minigap
-\summary{Kindle X-ray is a content enhancement feature that notes the appearances of key characters, places, and phrases throughout the book, and provides detailed descriptions, all with a single tap.}
-\minigap
-\begin{tightemize}
-\item Performed analysis using MapReduce to identify areas of improvement in text labeling pipelines.
-\item Improved quality of pipeline outputs by implementing and integrating with an AWS RDS database containing historic labelling and correction data.
-\end{tightemize}
-\sectionsep
+% \runsubsection{Amazon}
+% \descript{| Software Development Intern, Kindle Xray }
+% \location{May 2015 – Aug 2015 | Seattle, WA}
+% \minigap
+% \summary{Kindle X-ray is a content enhancement feature that notes the appearances of key characters, places, and phrases throughout the book, and provides detailed descriptions, all with a single tap.}
+% \minigap
+% \begin{tightemize}
+% \item Performed analysis using MapReduce to identify areas of improvement in text labeling pipelines.
+% \item Improved quality of pipeline outputs by implementing and integrating with an AWS RDS database containing historic labelling and correction data.
+% \end{tightemize}
+% \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     PROJECT
